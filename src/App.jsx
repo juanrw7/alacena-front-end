@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import RecipeList from './pages/RecipeList/RecipeList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -15,24 +16,50 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as recipeService from './services/recipeService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [formData, setFormData] = useState({
+    recipeQuery: ''
+  })
   const navigate = useNavigate()
-
+  
   const handleLogout = () => {
     authService.logout()
     setUser(null)
     navigate('/')
   }
-
+  
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
 
+  const handleChange = evt => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const handleSubmit = async evt => {
+    evt.preventDefault()
+    try {
+      const results = await recipeService.index(formData)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  
+  useEffect(() =>{
+    const fetchRecipeList = async () => {
+      const recipeData = await recipeService.index()
+      setFormData(recipeData)
+    }
+    if (user) fetchRecipeList()
+  }, [user])
+
+  
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -61,6 +88,16 @@ function App() {
               <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
           }
+        />
+        <Route path='/recipes' element={
+          <ProtectedRoute user={user}>
+            <RecipeList 
+            handleChange={handleChange} 
+            handleSubmit={handleSubmit}
+            formData={formData}
+            />
+          </ProtectedRoute>
+          } 
         />
       </Routes>
     </>
