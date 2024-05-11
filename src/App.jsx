@@ -23,9 +23,13 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+
   const [formData, setFormData] = useState({
-    recipeQuery: ''
+    mealType: ''
   })
+
+  const [recipeResults, setRecipeResults] = useState([])
+
   const navigate = useNavigate()
   
   const handleLogout = () => {
@@ -46,18 +50,20 @@ function App() {
     evt.preventDefault()
     try {
       const results = await recipeService.index(formData)
+      console.log(results)
+      setRecipeResults(results)
     } catch (err) {
       console.log(err)
     }
   }
   
-  useEffect(() =>{
-    const fetchRecipeList = async () => {
-      const recipeData = await recipeService.index()
-      setFormData(recipeData)
-    }
-    if (user) fetchRecipeList()
-  }, [user])
+  // useEffect(() =>{
+  //   const fetchRecipeList = async () => {
+  //     const recipeData = await recipeService.index()
+  //     setFormData(recipeData)
+  //   }
+  //   if (user) fetchRecipeList()
+  // }, [user])
 
   
   return (
@@ -94,6 +100,7 @@ function App() {
             <RecipeList 
             handleChange={handleChange} 
             handleSubmit={handleSubmit}
+            recipeResults={recipeResults}
             formData={formData}
             />
           </ProtectedRoute>
