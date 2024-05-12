@@ -3,7 +3,7 @@ import * as tokenService from './tokenService'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/recipes`
 
-async function index(mealType) {
+async function search(mealType) {
   try {
     const res = await fetch(`${BASE_URL}`, {
       method: "POST",
@@ -21,6 +21,6 @@ async function index(mealType) {
 
 
 export {
-  index,
+  search,
   
 }
