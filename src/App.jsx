@@ -49,6 +49,7 @@ function App() {
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
+      console.log(evt)
       const results = await recipeService.index(formData)
       console.log(results)
       setRecipeResults(results)
