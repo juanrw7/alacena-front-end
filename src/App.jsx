@@ -25,7 +25,7 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
 
   const [formData, setFormData] = useState({
-    mealType: ''
+    mealType: 'dinner'
   })
 
   const [recipeResults, setRecipeResults] = useState([])
@@ -49,7 +49,6 @@ function App() {
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
-      console.log(evt)
       const results = await recipeService.index(formData)
       console.log(results)
       setRecipeResults(results)
