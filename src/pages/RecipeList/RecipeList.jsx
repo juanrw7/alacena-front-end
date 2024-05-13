@@ -44,12 +44,14 @@ const RecipeList = (props) => {
         </div>
       </form>
     <Link>
-      <div className='recipe-results'>
+    <div className='recipe-results'>
         <ul>
-        {props.recipeResults.map(result => 
-          <li key={result.recipe.uri}>
-            {result.recipe.label}
-          </li>
+        {props.recipeResults.map((result,idx) => 
+
+          <RecipeCard
+          key={result.recipe.uri}
+          result={result}
+          />
         )}
         </ul>
       </div>
