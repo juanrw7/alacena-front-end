@@ -107,7 +107,7 @@ function App() {
           </ProtectedRoute>
           } 
         />
-        <Route path='/recipes/:recipeId' element={
+        <Route path='/recipes/details' element={
           <ProtectedRoute user={user}>
             <RecipeDetails/>
           </ProtectedRoute>

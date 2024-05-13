@@ -8,8 +8,8 @@ const RecipeCard = (props) => {
   return ( 
     <>
       <NavLink
-      to={`/recipes/${props.result.recipe.uri}`}
-      state={props}
+      to={`/recipes/details`}
+      state={props.result}
       >
         <div className={styles.container}>
           <h2>{props.result.recipe.label}</h2>
