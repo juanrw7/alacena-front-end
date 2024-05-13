@@ -1,4 +1,10 @@
 // npm modules
+import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
+
+// component
+import RecipeCard from '../../components/RecipeCard/RecipeCard'
 
 //css
 import styles from './RecipeList.module.css'
@@ -39,8 +45,14 @@ const RecipeList = (props) => {
 
       <div className='recipe-results'>
         <ul>
-        {props.recipeResults.map(result => 
-          <li key={result.recipe.uri}>{result.recipe.label}</li>
+        {props.recipeResults.map((result,idx) => 
+
+          <RecipeCard
+          key={result.recipe.uri}
+          result={result}
+          />
+
+
         )}
 
         </ul>
