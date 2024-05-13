@@ -1,14 +1,39 @@
+// npm modules
 import { useLocation } from "react-router-dom"
+import { useState } from "react"
 
 //components
 import Reviews from "../../components/Reviews/Reviews"
 import NewReview from "../../components/NewReview/NewReview"
 
+// services
+import * as recipeService from '../../services/recipeService'
+
 // css 
 import styles from "./RecipeDetails.module.css"
 
+
 const RecipeDetails= () => {
   const {state} = useLocation()
+  
+
+  const [recipeData, setRecipeData] = useState(state.recipe)
+
+  const handleSubmit = async evt => {
+    console.log(evt)
+    console.log(recipeData)
+    evt.preventDefault()
+    try {
+      const newRecipe = await recipeService.create(recipeData)
+      console.log(newRecipe)
+      setRecipeData(newRecipe)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  
+  console.log(recipeData)
+
   console.log(state)
   return (
     <>
@@ -37,7 +62,7 @@ const RecipeDetails= () => {
             <Reviews />
         </div>
         <div className={styles.newReview}>
-            <NewReview />
+            <NewReview handleSubmit={handleSubmit}/>
         </div>
     </div>
   </>

@@ -1,11 +1,11 @@
 //css
 import styles from './NewReview.module.css'
 
-const NewReview = () => {
+const NewReview = (props) => {
   return ( 
     <>
     
-    <form autoComplete="off" className={styles.form}>
+    <form autoComplete="off" className={styles.form} onSubmit={props.handleSubmit}>
     <h1>New Review</h1>
           <textarea
             required
@@ -26,7 +26,7 @@ const NewReview = () => {
           />
         </label>
         <div>
-          <button
+          <button 
             className={styles.button}>
             Add Review
           </button>

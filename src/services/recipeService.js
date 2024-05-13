@@ -19,8 +19,25 @@ async function index(mealType) {
   }
 }
 
+async function create (recipeData, reviewData) {
+  const formData = {recipeData: recipeData, reviewData:reviewData}
+  try {
+    const res = await fetch(`${BASE_URL}/new`, {
+      method: "POST",
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`, 
+        'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(formData)
+    })
+    return res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 
 export {
   index,
-  
+  create
 }
