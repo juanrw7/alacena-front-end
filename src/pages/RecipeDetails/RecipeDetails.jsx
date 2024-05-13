@@ -1,5 +1,9 @@
 import { useLocation } from "react-router-dom"
 
+//components
+import Reviews from "../../components/Reviews/Reviews"
+import NewReview from "../../components/NewReview/NewReview"
+
 // css 
 import styles from "./RecipeDetails.module.css"
 
@@ -28,7 +32,13 @@ const RecipeDetails= () => {
         </div>
         )}
       </div>
-
+        <div className={styles.review}>
+          <h1> Reviews</h1>
+            <Reviews />
+        </div>
+        <div className={styles.newReview}>
+            <NewReview />
+        </div>
     </div>
   </>
   )
