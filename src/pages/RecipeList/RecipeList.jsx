@@ -1,4 +1,8 @@
 // npm modules
+import { Link } from 'react-router-dom'
+
+//pages
+
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -18,8 +22,7 @@ const RecipeList = (props) => {
       autoComplete="off" 
       className={styles.form}
       >
-
-<label htmlFor="meal-type" className={styles.label}>Meal
+      <label htmlFor="meal-type" className={styles.label}>Meal
         <select
           required
           value={props.formData.mealType}
@@ -34,29 +37,23 @@ const RecipeList = (props) => {
             <option value="teatime">Teatime</option>
         </select>
         </label>
-
         <div>
           <button className={styles.button} type='submit'>
             Get Recipes
           </button>
         </div>
       </form>
-
-
+    <Link>
       <div className='recipe-results'>
         <ul>
-        {props.recipeResults.map((result,idx) => 
-
-          <RecipeCard
-          key={result.recipe.uri}
-          result={result}
-          />
-
-
+        {props.recipeResults.map(result => 
+          <li key={result.recipe.uri}>
+            {result.recipe.label}
+          </li>
         )}
-
         </ul>
       </div>
+    </Link>
     </main>
   )
 }

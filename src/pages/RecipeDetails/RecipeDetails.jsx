@@ -1,18 +1,10 @@
-import { useState } from "react";
+const RecipeDetails= () => {
+  return ( 
+    <div className="container">
+      <h1>Recipe Details</h1>
+    </div>
 
-// css
-
-
-const RecipeDetails = (props) => {
-  return (  
-    <>
-      <div className="details-container">
-        <h1>Recipe details go here</h1>
-
-
-      </div>
-    </>
   )
 }
 
-export default RecipeDetails;
+export default RecipeDetails
