@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 
 //pages
 
+import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
+
+// component
+import RecipeCard from '../../components/RecipeCard/RecipeCard'
 
 //css
 import styles from './RecipeList.module.css'

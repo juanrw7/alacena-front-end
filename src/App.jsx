@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
+import RecipeDetails from './pages/RecipeDetails/RecipeDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -49,7 +50,6 @@ function App() {
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
-      console.log(evt)
       const results = await recipeService.index(formData)
       console.log(results)
       setRecipeResults(results)
@@ -104,6 +104,12 @@ function App() {
             recipeResults={recipeResults}
             formData={formData}
             />
+          </ProtectedRoute>
+          } 
+        />
+        <Route path='/recipes/:recipeId' element={
+          <ProtectedRoute user={user}>
+            <RecipeDetails/>
           </ProtectedRoute>
           } 
         />
