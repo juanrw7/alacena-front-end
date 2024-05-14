@@ -67,7 +67,10 @@ const RecipeDetails= () => {
       </div>
         <div className={styles.review}>
           <h1> Reviews</h1>
-            <Reviews />
+            <Reviews 
+            recipe={recipeData}
+            // user={}
+            />
         </div>
         <div className={styles.newReview}>
             <NewReview 
