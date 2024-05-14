@@ -15,7 +15,7 @@ async function index(mealType) {
     })
     return res.json()
   } catch (err) {
-    throw new Error(err)
+    console.log(err)
   }
 }
 
@@ -32,7 +32,7 @@ async function create (recipeData, reviewData) {
     })
     return res.json()
   } catch (err) {
-    throw new Error(err)
+    console.log(err)
   }
 }
 
@@ -49,7 +49,23 @@ async function recipeDetails (recipeData) {
     })
     return res.json()
   } catch (err) {
-    throw new Error(err)
+    console.log(err)
+  }
+}
+
+async function updateReview (recipeId, formData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${recipeId}/reviews`,{
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+  })
+    return res.json()
+  } catch (err) {
+    console.log(err)
   }
 }
 
@@ -58,4 +74,5 @@ export {
   index,
   create,
   recipeDetails,
+  updateReview,
 }

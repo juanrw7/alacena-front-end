@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
 import RecipeDetails from './pages/RecipeDetails/RecipeDetails'
+import EditReview from './pages/EditReview/EditReview'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -112,6 +113,12 @@ function App() {
             <RecipeDetails user={user}/>
           </ProtectedRoute>
           } 
+        />
+        <Route path='recipes/:recipeId/reviews/edit' element={
+          <ProtectedRoute user={user}>
+            <EditReview user={user}/>
+          </ProtectedRoute>
+          }
         />
       </Routes>
     </>
