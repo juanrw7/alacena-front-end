@@ -9,24 +9,24 @@ const NewReview = (props) => {
     <h1>New Review</h1>
           <textarea
             required
-            value={FormData.comment}
+            value={props.reviewData.comment}
             name="comment"
             placeholder="Type your Review here.."
-            
+            onChange={props.handleChange}
           />
         <label className={styles.label}>
           Rating (1-5)
           <input
             type="Number"
-            value={FormData.rating}
+            value={props.reviewData.rating}
             name="rating"
             min="0"
             max="5"
-            
+            onChange={props.handleChange}
           />
         </label>
         <div>
-          <button 
+          <button type='submit'
             className={styles.button}>
             Add Review
           </button>

@@ -18,18 +18,26 @@ const RecipeDetails= () => {
   
 
   const [recipeData, setRecipeData] = useState(state.recipe)
-
+  const [reviewData, setReviewData] = useState({
+    comment: '',
+    rating: ''
+  })
+  
   const handleSubmit = async evt => {
     console.log(evt)
     console.log(recipeData)
     evt.preventDefault()
     try {
-      const newRecipe = await recipeService.create(recipeData)
+      const newRecipe = await recipeService.create(recipeData, reviewData)
       console.log(newRecipe)
       setRecipeData(newRecipe)
     } catch (err) {
       console.log(err)
     }
+  }
+
+  const handleChange = (evt) => {
+    setReviewData({...reviewData, [evt.target.name]: evt.target.value })
   }
   
   console.log(recipeData)
@@ -62,7 +70,11 @@ const RecipeDetails= () => {
             <Reviews />
         </div>
         <div className={styles.newReview}>
-            <NewReview handleSubmit={handleSubmit}/>
+            <NewReview 
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            reviewData={reviewData}
+            />
         </div>
     </div>
   </>
