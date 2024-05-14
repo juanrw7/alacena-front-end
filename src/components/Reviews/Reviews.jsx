@@ -20,6 +20,7 @@ const Reviews = (props) => {
           user={props.user}
           details={props.details}
           recipeId={props.recipe._id}
+          handleDeleteReview={props.handleDeleteReview}
           />
         )}
       </ul>
