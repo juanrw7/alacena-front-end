@@ -1,6 +1,6 @@
 // npm modules
 import { useLocation } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 //components
 import Reviews from "../../components/Reviews/Reviews"
@@ -13,7 +13,7 @@ import * as recipeService from '../../services/recipeService'
 import styles from "./RecipeDetails.module.css"
 
 
-const RecipeDetails= () => {
+const RecipeDetails= (props) => {
   const {state} = useLocation()
   
 
@@ -39,6 +39,15 @@ const RecipeDetails= () => {
   const handleChange = (evt) => {
     setReviewData({...reviewData, [evt.target.name]: evt.target.value })
   }
+
+  useEffect(() =>{
+    const fetchRecipeData = async () => {
+      const recipeDetails = await recipeService.recipeDetails(state.recipe)
+      console.log(recipeDetails)
+    if (recipeDetails) setRecipeData(recipeDetails)
+    }
+    fetchRecipeData()
+  }, [state.recipe])
   
   console.log(recipeData)
 
@@ -69,7 +78,7 @@ const RecipeDetails= () => {
           <h1> Reviews</h1>
             <Reviews 
             recipe={recipeData}
-            // user={}
+            user={props.user}
             />
         </div>
         <div className={styles.newReview}>

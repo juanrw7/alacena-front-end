@@ -109,7 +109,7 @@ function App() {
         />
         <Route path='/recipes/details' element={
           <ProtectedRoute user={user}>
-            <RecipeDetails/>
+            <RecipeDetails user={user}/>
           </ProtectedRoute>
           } 
         />

@@ -36,8 +36,26 @@ async function create (recipeData, reviewData) {
   }
 }
 
+async function recipeDetails (recipeData) {
+  console.log(recipeData)
+  try {
+    const res = await fetch(`${BASE_URL}/recipedetails`, {
+      method: "POST",
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(recipeData)
+    })
+    return res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 
 export {
   index,
-  create
+  create,
+  recipeDetails,
 }
