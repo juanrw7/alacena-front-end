@@ -31,6 +31,10 @@ const RecipeDetails= (props) => {
       const newRecipe = await recipeService.create(recipeData, reviewData)
       console.log(newRecipe)
       setRecipeData(newRecipe)
+      setReviewData({
+        comment: '',
+        rating: ''
+      })
     } catch (err) {
       console.log(err)
     }
@@ -59,7 +63,9 @@ const RecipeDetails= (props) => {
         <img src={state.recipe.image} alt="" />
         <h1>{state.recipe.label}</h1>
       </div>
-
+      <div className={styles.title}>
+        Ingredients
+      </div>
 
       <div className={styles.ingredients}>
         {state.recipe.ingredients.map(ingredient =>
@@ -70,15 +76,19 @@ const RecipeDetails= (props) => {
 
           <h3>{ingredient.food.charAt(0).toUpperCase()+ ingredient.food.slice(1)}</h3> 
           <p>-&nbsp;&nbsp;{ingredient.text}</p>
-
+          
         </div>
         )}
+      </div>
+      <div className={styles.instructions}>
+        <a href={state.recipe.url} target="_blank">View Recipe Instructions</a>
       </div>
         <div className={styles.review}>
           <h1> Reviews</h1>
             <Reviews 
             recipe={recipeData}
             user={props.user}
+            details={state.recipe}
             />
         </div>
         <div className={styles.newReview}>

@@ -18,6 +18,8 @@ const Reviews = (props) => {
           <ReviewCard key={review._id}
           review={review}
           user={props.user}
+          details={props.details}
+          recipeId={props.recipe._id}
           />
         )}
       </ul>

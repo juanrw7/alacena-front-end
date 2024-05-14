@@ -1,9 +1,14 @@
+//npm modules
+import { NavLink } from 'react-router-dom'
+
 // css
 import styles from './ReviewCard.module.css'
 
 const ReviewCard = (props) => {
   console.log(props.user.profile)
   console.log(props.review.author)
+  const recipeInfo = [props.details, props.review]
+  console.log(recipeInfo)
   return (  
     <>
       <div className={styles.container}>
@@ -12,9 +17,17 @@ const ReviewCard = (props) => {
 
         {props.review.author._id === props.user.profile &&
             <>
+            <NavLink 
+            to={`/recipes/${props.recipeId}/reviews/edit`}
+            state={recipeInfo}
+            >
+            <button>📝</button>
+            </NavLink>
+            
               <button>
-                delete
+                🗑
               </button>
+            
             </>
           }
       
