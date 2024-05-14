@@ -24,7 +24,7 @@ const ReviewCard = (props) => {
             <button>📝</button>
             </NavLink>
             
-              <button>
+              <button onClick={() => props.handleDeleteReview(props.recipeId, props.review._id)}>
                 🗑
               </button>
             

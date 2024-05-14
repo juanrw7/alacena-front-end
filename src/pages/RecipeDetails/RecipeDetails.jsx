@@ -52,6 +52,14 @@ const RecipeDetails= (props) => {
     }
     fetchRecipeData()
   }, [state.recipe])
+
+  const handleDeleteReview = async (recipeId, reviewId) => {
+    await recipeService.deleteReview(recipeId, reviewId)
+    setRecipeData({
+      ...recipeData,
+      reviews: recipeData.reviews.filter( review => review._id !== reviewId)
+    })
+  }
   
   console.log(recipeData)
 
@@ -89,6 +97,7 @@ const RecipeDetails= (props) => {
             recipe={recipeData}
             user={props.user}
             details={state.recipe}
+            handleDeleteReview={handleDeleteReview}
             />
         </div>
         <div className={styles.newReview}>
