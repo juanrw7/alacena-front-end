@@ -1,3 +1,7 @@
+// components
+import ReviewCard from '../ReviewCard/ReviewCard'
+
+
 //css
 import styles from './Reviews.module.css'
 
@@ -11,12 +15,10 @@ const Reviews = (props) => {
       <h1>All Reviews</h1>
       <ul>
         {props.recipe.reviews.map(review => 
-          <div 
-          key={review._id}
-          className={styles.review}
-          >
-            <p>-{review.comment}</p>&nbsp;&nbsp; {review.rating>1? <p> {review.rating} stars</p> : <p> {review.rating} star</p> }
-          </div>
+          <ReviewCard key={review._id}
+          review={review}
+          user={props.user}
+          />
         )}
       </ul>
     </>
