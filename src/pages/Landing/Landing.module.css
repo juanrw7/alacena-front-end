@@ -23,5 +23,15 @@
 .logo {
   /* border-radius: 8px; */
   max-width: 400px;
-  /* transform: rotate(20deg); */
+}
+
+.logo{
+  animation: rotation infinite 2s linear alternate;
+}
+
+@keyframes rotation{
+
+  to{ 
+    transform:rotate(70deg);
+  }
 }
