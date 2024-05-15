@@ -1,6 +1,7 @@
 // npm modules
 import { useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 //components
 import Reviews from "../../components/Reviews/Reviews"
@@ -66,10 +67,21 @@ const RecipeDetails= (props) => {
   console.log(state)
   return (
     <>
+    <main className={styles.main}>
+    <Link to='/recipes'>
+        <button className={styles.button}>
+          Back
+          </button>
+      </Link>
     <div className={styles.container}>
+      
       <div className={styles.image}>
-        <img src={state.recipe.image} alt="" />
         <h1>{state.recipe.label}</h1>
+        <img src={state.recipe.image} alt="" />
+        
+      </div>
+      <div className={styles.instructions}>
+        <a href={state.recipe.url} target="_blank">View Recipe Instructions</a>
       </div>
       <div className={styles.title}>
         Ingredients
@@ -83,14 +95,12 @@ const RecipeDetails= (props) => {
         >
 
           <h3>{ingredient.food.charAt(0).toUpperCase()+ ingredient.food.slice(1)}</h3> 
-          <p>-&nbsp;&nbsp;{ingredient.text}</p>
+          <p>&nbsp;&nbsp;{ingredient.text}</p>
           
         </div>
         )}
       </div>
-      <div className={styles.instructions}>
-        <a href={state.recipe.url} target="_blank">View Recipe Instructions</a>
-      </div>
+    </div>  
         <div className={styles.review}>
           <h1> Reviews</h1>
             <Reviews 
@@ -99,7 +109,7 @@ const RecipeDetails= (props) => {
             details={state.recipe}
             handleDeleteReview={handleDeleteReview}
             />
-        </div>
+        
         <div className={styles.newReview}>
             <NewReview 
             handleSubmit={handleSubmit}
@@ -107,7 +117,8 @@ const RecipeDetails= (props) => {
             reviewData={reviewData}
             />
         </div>
-    </div>
+        </div> 
+    </main>
   </>
   )
 }
