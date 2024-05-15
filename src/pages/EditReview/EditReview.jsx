@@ -31,7 +31,7 @@ const EditReview = () => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault()
-    recipeService.updateReview(recipeId, formData)
+    await recipeService.updateReview(recipeId, formData)
     navigate('/recipes/details', { state: currentRecipe })
   }
 
