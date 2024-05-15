@@ -79,59 +79,78 @@ const Signup = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
-      <h1>Sign Up</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Confirm Password
-          <input
-            type="password"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Upload Photo
-          <input 
-            type="file" 
-            name="photo" 
-            onChange={handleChangePhoto}
-            ref={imgInputRef}
-          />
-        </label>
-        <div>
-          <Link to="/">Cancel</Link>
-          <button
-            className={styles.button}
-            disabled={ isFormInvalid() || isSubmitted }
-          >
-            {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
-          </button>
-        </div>
-      </form>
+
+      <section>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+        <h1>Sign Up</h1>
+          <div className={styles.formSection}>
+            <label className={styles.label}>
+              Name
+            </label>
+            <input type="text" value={name} name="name" onChange={handleChange} />
+          </div>
+
+          <div className={styles.formSection}>
+            <label className={styles.label}>
+              Email
+            </label>
+            <input
+              type="text"
+              value={email}
+              name="email"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.formSection}>
+            <label className={styles.label}>
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              name="password"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.formSection}>
+          <label className={styles.label}>
+            Confirm Password
+            </label>
+            <input
+              type="password"
+              value={passwordConf}
+              name="passwordConf"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.formSection}>
+            <label className={styles.label}>
+              Upload Photo
+            </label>
+            <input 
+              className={styles.imgInput}
+              type="file" 
+              name="photo" 
+              onChange={handleChangePhoto}
+              ref={imgInputRef}
+            />
+          </div>
+
+          <div className={styles.bottomContainer}>
+            <Link to="/">Cancel</Link>
+            <button
+              className={styles.button}
+              disabled={ isFormInvalid() || isSubmitted }
+            >
+              {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
+            </button>
+          </div>
+        </form>
+        <p className={styles.message}>{message}</p>
+      </section>
     </main>
   )
 }
