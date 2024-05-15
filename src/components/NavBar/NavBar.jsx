@@ -10,23 +10,23 @@ import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
 
-  const [profiles, setProfiles] = useState([])
+  // const [profiles, setProfiles] = useState([])
 
-  useEffect(() => {
-    const fetchProfiles = async () => {
-      const profileData = await profileService.getAllProfiles()
-      setProfiles(profileData)
-    }
-    fetchProfiles()
-  }, [])
+  // useEffect(() => {
+  //   const fetchProfiles = async () => {
+  //     const profileData = await profileService.getAllProfiles()
+  //     setProfiles(profileData)
+  //   }
+  //   fetchProfiles()
+  // }, [])
 
-  const currentProfile = profiles.filter((profile)=> profile.name === user.name)
+  // const currentProfile = profiles.filter((profile)=> profile.name === user.name)
   
-  if (profiles.length) {
-    console.log(profiles.filter((profile)=> profile.name === user.name))
-  }
+  // if (profiles.length) {
+  //   console.log(profiles.filter((profile)=> profile.name === user.name))
+  // }
   
-  console.log(currentProfile)
+  // console.log(currentProfile)
 
   const publicLinks = (
     <ul>
@@ -47,10 +47,10 @@ const NavBar = ({ user, handleLogout }) => {
 
   return (
     <nav className={styles.container}>
-      <NavLink to="/">
+      {/* <NavLink to="/"> */}
         {/* <h1>{currentProfile[0].name}</h1> */}
-        {currentProfile && <img src={currentProfile[0].photo} className={styles.profileImg} alt="" />}
-        </NavLink>
+        {/* {currentProfile && <img src={currentProfile[0].photo} className={styles.profileImg} alt="" />}
+        </NavLink> */}
       {user ? protectedLinks : publicLinks}
     </nav>
   )
