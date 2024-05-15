@@ -1,5 +1,4 @@
-
-input {
+  input {
   margin-left: 16px;
   padding: 4px 8px;
   font-size: 16px;
@@ -54,7 +53,7 @@ input[type="file"] {
 
 .form > label:last-of-type {
   margin-bottom: 16px;
-}
+
 a {
   font-weight: bold;
 }
