@@ -5,6 +5,9 @@ import { useEffect, useState } from 'react'
 // services
 import * as profileService from '../../services/profileService'
 
+// assets
+import logo from "../../assets/images/logo2.png"
+
 // css
 import styles from './NavBar.module.css'
 
@@ -47,6 +50,7 @@ const NavBar = ({ user, handleLogout }) => {
 
   return (
     <nav className={styles.container}>
+      <img src={logo} className={styles.logo} alt="chef hat" />
       {/* <NavLink to="/"> */}
         {/* <h1>{currentProfile[0].name}</h1> */}
         {/* {currentProfile && <img src={currentProfile[0].photo} className={styles.profileImg} alt="" />}
