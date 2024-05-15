@@ -11,7 +11,7 @@ const Reviews = (props) => {
 
   return ( 
     <>
-    <div className={styles.container}>
+    <div>
       <ul>
         {props.recipe.reviews.map(review => 
           <ReviewCard key={review._id}
