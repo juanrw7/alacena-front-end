@@ -16,7 +16,6 @@ import styles from './RecipeList.module.css'
 const RecipeList = (props) => {
   return ( 
     <main className={styles.container}>
-      <h1>Daily Recipes</h1>
       <form 
       onSubmit={props.handleSubmit} 
       autoComplete="off" 
@@ -37,22 +36,25 @@ const RecipeList = (props) => {
             <option value="teatime">Teatime</option>
         </select>
         </label>
-        <div>
+        <div className="recipe-button">
           <button className={styles.button} type='submit'>
             Get Recipes
           </button>
         </div>
       </form>
     <Link>
-    <div className='recipe-results'>
+    <div className={styles.recipeCard}>
         <ul>
-        {props.recipeResults.map((result,idx) => 
-
+        <li>
+        {props.recipeResults.map((result) => 
+          
+            
           <RecipeCard
           key={result.recipe.uri}
           result={result}
           />
         )}
+        </li>
         </ul>
       </div>
     </Link>
