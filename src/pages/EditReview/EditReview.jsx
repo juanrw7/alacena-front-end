@@ -16,6 +16,14 @@ const EditReview = () => {
   const [formData, setFormData] = useState(state[1])
 
   console.log(recipeId)
+  const recipe = {recipe:state[0]}
+
+  const [currentRecipe, setCurrentRecipe] = useState(recipe)
+
+  
+  // setCurrentRecipe(recipe)
+
+
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -24,7 +32,7 @@ const EditReview = () => {
   const handleSubmit = async (evt) => {
     evt.preventDefault()
     recipeService.updateReview(recipeId, formData)
-    navigate(`/recipe/details`)
+    navigate('/recipes/details', { state: currentRecipe })
   }
 
   return ( 
