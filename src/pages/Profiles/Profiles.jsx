@@ -26,7 +26,10 @@ const Profiles = () => {
     <main className={styles.container}>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
+        <div key={profile._id} className={styles.profile}>
+          <img src={profile.photo} className={styles.profileImg} alt="" />
+          <p >{profile.name}</p>
+        </div>
       ))}
     </main>
   )
