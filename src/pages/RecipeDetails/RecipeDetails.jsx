@@ -68,11 +68,7 @@ const RecipeDetails= (props) => {
   return (
     <>
     <main className={styles.main}>
-    <Link to='/recipes'>
-        <button className={styles.button}>
-          Back
-          </button>
-      </Link>
+
     <div className={styles.container}>
       
       <div className={styles.image}>
@@ -100,7 +96,7 @@ const RecipeDetails= (props) => {
         </div>
         )}
       </div>
-    </div>  
+    </div> 
         <div className={styles.review}>
           <h1> Reviews</h1>
             <Reviews 
@@ -118,6 +114,11 @@ const RecipeDetails= (props) => {
             />
         </div>
         </div> 
+        <Link to='/recipes'>
+        <button className={styles.button}>
+          Back
+          </button>
+      </Link> 
     </main>
   </>
   )

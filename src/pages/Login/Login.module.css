@@ -1,8 +1,10 @@
-/* input {
+
+  input {
   margin-left: 16px;
   padding: 4px 8px;
   font-size: 16px;
-  width: 300px;
+  width: 250px;
+  border-radius: 8px;
 }
 
 input[type="file"] {
@@ -10,7 +12,11 @@ input[type="file"] {
 }
 
 .container {
+  margin-top: 150px;
+  height: 100%;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -40,8 +46,17 @@ input[type="file"] {
 
 .button {
   margin-left: 16px;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .form > label:last-of-type {
   margin-bottom: 16px;
-} */
+
+}
+a {
+  font-weight: bold;
+}
+
