@@ -2,8 +2,7 @@
 import ReviewCard from '../ReviewCard/ReviewCard'
 
 
-//css
-import styles from './Reviews.module.css'
+
 
 const Reviews = (props) => {
   console.log(props)
@@ -12,7 +11,7 @@ const Reviews = (props) => {
 
   return ( 
     <>
-      <h1>All Reviews</h1>
+    <div className={styles.container}>
       <ul>
         {props.recipe.reviews.map(review => 
           <ReviewCard key={review._id}
@@ -24,6 +23,7 @@ const Reviews = (props) => {
           />
         )}
       </ul>
+    </div>
     </>
   )
 }
