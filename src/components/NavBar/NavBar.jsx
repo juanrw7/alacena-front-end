@@ -50,7 +50,9 @@ const NavBar = ({ user, handleLogout }) => {
 
   return (
     <nav className={styles.container}>
-      <img src={logo} className={styles.logo} alt="chef hat" />
+      <NavLink to="/recipes">
+        <img src={logo} className={styles.logo} alt="chef hat" />
+      </NavLink>
       {/* <NavLink to="/"> */}
         {/* <h1>{currentProfile[0].name}</h1> */}
         {/* {currentProfile && <img src={currentProfile[0].photo} className={styles.profileImg} alt="" />}

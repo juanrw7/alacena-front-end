@@ -49,5 +49,16 @@ a{
 .logo {
   width: 70px;
   height: 70px;
-  /* transform: rotate(20deg); */
+  cursor: pointer;
+}
+
+.logo:hover {
+  animation: rotation infinite 2s linear alternate;
+}
+
+@keyframes rotation{
+
+  to{ 
+    transform:rotate(70deg);
+  }
 }
