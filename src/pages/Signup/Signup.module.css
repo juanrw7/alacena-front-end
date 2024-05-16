@@ -13,29 +13,6 @@
   font-weight: bold;
 }
 
-/* .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-} */
-
-/* .label {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-bottom: 8px;
-} */
-
-.button {
-  margin-left: 16px;
-}
-
-.form > label:last-of-type {
-  margin-bottom: 16px;
-}
-
 .form {
   padding: 20px;
   background-color: #59595ca5;

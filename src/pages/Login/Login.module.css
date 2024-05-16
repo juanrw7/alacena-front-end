@@ -1,60 +1,85 @@
-  input {
-  margin-left: 16px;
-  padding: 4px 8px;
-  font-size: 16px;
-  width: 250px;
-  border-radius: 8px;
-}
-
-input[type="file"] {
-  padding: 0;
-}
-
 .container {
-  margin-top: 150px;
-  height: 100%;
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 100px;
 }
 
 .message {
   margin-top: 0;
-  height: 22px;
+  height: 20px;
   color: #dd1b16;
   font-size: 18px;
   font-weight: bold;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.label {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
 .button {
   margin-left: 16px;
-  border-radius: 15px;
-  font-weight: bold;
-  padding: 5px;
-  cursor: pointer;
 }
 
 .form > label:last-of-type {
   margin-bottom: 16px;
 }
 
-a {
+.form {
+  padding: 20px;
+  background-color: #59595ca5;
+  margin-top: 100px;
+  box-shadow:0 0 5px 4px;
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+.form > h1 {
+  text-align: left;
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.formSection > input {
+  font-size: 24px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px 8px;
+}
+
+.formSection > .imgInput {
+  padding: 8px 0;
+}
+
+.formSection > .label {
+  margin-bottom: 10px;
+}
+
+.bottomContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  font-size: 24px;
   font-weight: bold;
+}
+
+.bottomContainer > button {
+  padding: 4px 8px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.bottomContainer > button:hover { 
+  background-color: aqua;
+  color: black;
+}
+
+.bottomContainer > a:hover { 
+  color: red;
 }

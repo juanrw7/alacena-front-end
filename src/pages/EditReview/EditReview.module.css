@@ -1,6 +1,75 @@
 .form {
+  padding: 20px;
+  background-color: #59595ca5;
+  margin-top: 100px;
+  box-shadow:0 0 5px 4px;
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+.form > h1 {
+  text-align: left;
+  margin: 10px 0 30px;
+  font-size: 36px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.formSection {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-size: 24px;
   align-items: center;
-  margin-bottom: 50px;
+}
+
+.formSection > textarea {
+  font-size: 24px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px 8px;
+  max-width: 500px;
+  max-height: 200px;
+}
+
+.formSection > .label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.formSection > input {
+  font-size: 24px;
+  border-radius: 8px;
+  width: 30%;
+  padding: 8px 8px;
+  text-align: center;
+}
+
+.bottomContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.bottomContainer > button {
+  padding: 8px 12px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.bottomContainer > button:hover {
+  background-color: aqua;
+  box-shadow:0 0 1px 1px;
 }
