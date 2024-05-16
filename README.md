@@ -1,7 +1,7 @@
 # Alacena - A recipe app
 ## [Click here to find your next meal on the Alacena App]()
 
-![alt text](https://i.imgur.com/77gRtts.jpeg "Alacena Landing Page"),
+![alt text](https://i.imgur.com/77gRtts.jpeg "Alacena Landing Page")
 
 Alacena was created because we have a passion for cooking and great food.  Alacena is a tool to help you make a decision of the daily question 'what are we eating?' by offering 20 recipes per day for the user to try.
 
