@@ -45,7 +45,6 @@ const RecipeDetails= (props) => {
     setReviewData({...reviewData, [evt.target.name]: evt.target.value })
   }
 
-  console.log(state.recipe)
 
   useEffect(() =>{
     const fetchRecipeData = async () => {
@@ -64,20 +63,31 @@ const RecipeDetails= (props) => {
     })
   }
   
-  console.log(recipeData)
 
-  console.log(state)
   return (
     <>
     <main className={styles.main}>
 
     <div className={styles.container}>
       
-      <div className={styles.image}>
         <h1>{state.recipe.label}</h1>
-        <img src={state.recipe.image} alt="" />
-        
+
+      <div className={styles.recipeHeader}>
+
+        <div className={styles.image}>
+          <img src={state.recipe.image} alt="recipe Image" />
+        </div>
+
+        <div className={styles.recipeInfo}>
+          {state.recipe.totalTime>0 && <h2>- Cooking time: {state.recipe.totalTime}min</h2>}
+          <h2>- Serves: {state.recipe.yield}</h2>
+          <h2>- {state.recipe.cuisineType[0].charAt(0).toUpperCase()+ state.recipe.cuisineType[0].slice(1)} cuisine</h2>
+          <h2>- Total calories: {Math.round(state.recipe.calories)}</h2>
+          <h2>- Calories per serving: {Math.round(state.recipe.calories / state.recipe.yield)}</h2>
+        </div>
       </div>
+
+
       <div className={styles.instructions}>
         <a href={state.recipe.url} target="_blank">View Recipe Instructions</a>
       </div>
@@ -93,7 +103,7 @@ const RecipeDetails= (props) => {
         >
 
           <h3>{ingredient.food.charAt(0).toUpperCase()+ ingredient.food.slice(1)}</h3> 
-          <p>&nbsp;&nbsp;{ingredient.text}</p>
+          <p>{ingredient.text}</p>
           
         </div>
         )}
