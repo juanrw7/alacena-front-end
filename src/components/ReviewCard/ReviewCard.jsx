@@ -12,11 +12,22 @@ const ReviewCard = (props) => {
   return (  
     <>
       <div className={styles.container}>
-
-
-        <h4>{props.review.comment}</h4>&nbsp;{props.review.rating > 1? <h4> {props.review.rating} Stars</h4> : <h4> {props.review.rating} Star</h4> }
-
-
+        <div className={styles.reviewCard}>
+          <div className={styles.comment}>
+            {props.review.comment}
+        </div>
+        <div className={styles.author}>
+          <div className={styles.rating}>
+        Recipe Rating:&nbsp;{props.review.rating > 1? <h4> {props.review.rating} Stars</h4> : <h4> {props.review.rating} Star</h4> }
+        </div>
+        <div className={styles.photo}>
+          <img src={props.review.author.photo} alt="" />
+          {props.review.author.name}
+        </div>
+          
+        </div>
+        </div> 
+        <div className={styles.button}>
         {props.review.author._id === props.user.profile &&
             <>
             <NavLink 
@@ -29,10 +40,9 @@ const ReviewCard = (props) => {
               <button>
                 🗑
               </button>
-            
             </>
           }
-      
+          </div>
       </div>
     </>
   )

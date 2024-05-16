@@ -1,7 +1,8 @@
 // components
 import ReviewCard from '../ReviewCard/ReviewCard'
 
-
+//css
+import styles from './Reviews.module.css'
 
 
 const Reviews = (props) => {
@@ -11,8 +12,7 @@ const Reviews = (props) => {
 
   return ( 
     <>
-    <div>
-      <ul>
+      <div className={styles.scroll}>
         {props.recipe.reviews.map(review => 
           <ReviewCard key={review._id}
           review={review}
@@ -22,8 +22,7 @@ const Reviews = (props) => {
           handleDeleteReview={props.handleDeleteReview}
           />
         )}
-      </ul>
-    </div>
+      </div>
     </>
   )
 }
