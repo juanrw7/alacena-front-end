@@ -35,35 +35,42 @@ const EditReview = () => {
     navigate('/recipes/details', { state: currentRecipe })
   }
 
-  return ( 
+  return (
     <>
+    <div className={styles.container}>
       <form autoComplete="off" className={styles.form} onSubmit={handleSubmit}>
-    <h1>Edit Review</h1>
+        <h1>Edit Review</h1>
+        <div className={styles.formSection}> 
           <textarea
             required
             value={formData.comment}
             name="comment"
-            placeholder="Type your Review here.."
+            placeholder="Type your Review here..."
             onChange={handleChange}
           />
+        </div>
+
+        <div className={styles.formSection}>
         <label className={styles.label}>
           Rating (1-5)
-          <input
-            type="Number"
-            value={formData.rating}
-            name="rating"
-            min="0"
-            max="5"
-            onChange={handleChange}
-          />
         </label>
-        <div>
+        <input
+          type="Number"
+          value={formData.rating}
+          name="rating"
+          min="0"
+          max="5"
+          onChange={handleChange}
+        />
+        </div>
+        <div className={styles.bottomContainer}>
           <button type='submit'
             className={styles.button}>
             Update Review
           </button>
         </div>
       </form>
+    </div>
     </>
   )
 }
