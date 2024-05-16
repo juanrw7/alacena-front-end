@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
 import RecipeDetails from './pages/RecipeDetails/RecipeDetails'
 import EditReview from './pages/EditReview/EditReview'
+import RecipeSearch from './pages/RecipeSearch/RecipeSearch'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -23,6 +24,10 @@ import * as recipeService from './services/recipeService'
 // styles
 import './App.css'
 
+const initialFormValues = {
+  ingredient1:'', ingredient2:'', ingredient3:'', ingredient4:'',ingredient5:'', ingredient6:'', ingredient7:'', ingredient8:'', ingredient9:'', ingredient10:''
+}
+
 function App() {
   const [user, setUser] = useState(authService.getUser())
 
@@ -30,7 +35,10 @@ function App() {
     mealType: 'dinner'
   })
 
+
   const [recipeResults, setRecipeResults] = useState([])
+
+  const [searchFormData, setSearchFormData] = useState(initialFormValues)
 
   const navigate = useNavigate()
   
@@ -58,16 +66,23 @@ function App() {
       console.log(err)
     }
   }
-  
-  // useEffect(() =>{
-  //   const fetchRecipeList = async () => {
-  //     const recipeData = await recipeService.index()
-  //     setFormData(recipeData)
-  //   }
-  //   if (user) fetchRecipeList()
-  // }, [user])
 
+  const handleSearchSubmit = async evt => {
+    evt.preventDefault()
+    try {
+      const searchResults = await recipeService.search(searchFormData)
+      setSearchFormData(searchResults)
+  } catch (err) {
+    console.log(err)
+  }
+    }
+    console.log(searchFormData)
   
+  const handleInputChange = (evt) => {
+    const {name, value} = evt.target
+    setSearchFormData({...searchFormData, [name]: value, })
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -114,12 +129,21 @@ function App() {
           </ProtectedRoute>
           } 
         />
-        <Route path='recipes/:recipeId/reviews/edit' element={
+        <Route path='/recipes/:recipeId/reviews/edit' element={
           <ProtectedRoute user={user}>
             <EditReview user={user}/>
           </ProtectedRoute>
           }
         />
+        <Route path='/search' element={
+          <ProtectedRoute user={user}>
+            <RecipeSearch user={user}
+            handleInputChange={handleInputChange}
+            handleSearchSubmit={handleSearchSubmit}
+            searchFormData={searchFormData}
+            />
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )
