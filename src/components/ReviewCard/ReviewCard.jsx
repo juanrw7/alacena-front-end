@@ -4,6 +4,11 @@ import { NavLink } from 'react-router-dom'
 // css
 import styles from './ReviewCard.module.css'
 
+//icon
+import starIcon from '../../assets/icons/star-icon.png'
+import trashIcon from '../../assets/icons/trash.svg'
+import editIcon from '../../assets/icons/compose.svg'
+
 const ReviewCard = (props) => {
   console.log(props.user.profile)
   console.log(props.review.author)
@@ -18,11 +23,15 @@ const ReviewCard = (props) => {
         </div>
         <div className={styles.author}>
           <div className={styles.rating}>
-        Recipe Rating:&nbsp;{props.review.rating > 1? <h4> {props.review.rating} Stars</h4> : <h4> {props.review.rating} Star</h4> }
+        Recipe Rating:&nbsp;{props.review.rating > 1? <h4> {props.review.rating}  Stars</h4> : <h4> {props.review.rating} Stars</h4> }
+        <img id="star" src={starIcon} alt="star rating" />
         </div>
         <div className={styles.photo}>
           <img src={props.review.author.photo} alt="" />
           {props.review.author.name}
+          <br />
+          Posted: &nbsp;
+          {(new Date(props.review.author.createdAt).toLocaleString('en-US', {month: 'numeric', day: 'numeric', year: '2-digit'}))}
         </div>
           
         </div>
@@ -34,11 +43,11 @@ const ReviewCard = (props) => {
             to={`/recipes/${props.recipeId}/reviews/edit`}
             state={recipeInfo}
             >
-            <button>📝</button>
+            <button><img src={editIcon} alt="" /></button>
             </NavLink>
             
               <button>
-                🗑
+                <img src={trashIcon} alt="" />
               </button>
             </>
           }

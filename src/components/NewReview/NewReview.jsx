@@ -15,7 +15,7 @@ const NewReview = (props) => {
             onChange={props.handleChange}
           />
         <label className={styles.label}>
-          Rating (1-5)
+          Rating (1-5): &nbsp;
           <input
             type="Number"
             value={props.reviewData.rating}
