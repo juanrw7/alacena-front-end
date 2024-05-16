@@ -80,7 +80,7 @@
   border-radius: 15px;
   margin-top: 50px;
   box-shadow: 5px 5px 5px black;
-  width: 50%;
+  width: 75%;
 }
 
 .newReview {
@@ -88,7 +88,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 2px solid;
+  background-color: #59595c;
+  border-radius: 15px;
+  margin-top: 50px;
+  box-shadow: 5px 5px 5px black;
+  width: 50%;
 }
 
 .instructions {

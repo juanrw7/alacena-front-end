@@ -107,7 +107,7 @@ const RecipeDetails= (props) => {
             details={state.recipe}
             handleDeleteReview={handleDeleteReview}
             />
-        
+        </div> 
         <div className={styles.newReview}>
             <NewReview 
             handleSubmit={handleSubmit}
@@ -115,7 +115,7 @@ const RecipeDetails= (props) => {
             reviewData={reviewData}
             />
         </div>
-        </div> 
+        
         <Link to='/recipes'>
         <button className={styles.button}>
           Back
