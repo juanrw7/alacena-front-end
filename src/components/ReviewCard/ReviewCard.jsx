@@ -13,7 +13,9 @@ const ReviewCard = (props) => {
     <>
       <div className={styles.container}>
 
-        <h4>{props.review.comment} {props.review.rating>1? <h4> {props.review.rating} Stars</h4> : <h4> {props.review.rating} Star</h4> }</h4>
+
+        <h4>{props.review.comment}</h4>&nbsp;{props.review.rating > 1? <h4> {props.review.rating} Stars</h4> : <h4> {props.review.rating} Star</h4> }
+
 
         {props.review.author._id === props.user.profile &&
             <>
@@ -24,7 +26,7 @@ const ReviewCard = (props) => {
             <button>📝</button>
             </NavLink>
             
-              <button onClick={() => props.handleDeleteReview(props.recipeId, props.review._id)}>
+              <button>
                 🗑
               </button>
             

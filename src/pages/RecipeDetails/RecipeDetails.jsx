@@ -45,6 +45,8 @@ const RecipeDetails= (props) => {
     setReviewData({...reviewData, [evt.target.name]: evt.target.value })
   }
 
+  console.log(state.recipe)
+
   useEffect(() =>{
     const fetchRecipeData = async () => {
       const recipeDetails = await recipeService.recipeDetails(state.recipe)
