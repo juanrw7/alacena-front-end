@@ -1,12 +1,3 @@
-// npm modules
-import { Link } from 'react-router-dom'
-
-//pages
-
-import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
-
 // component
 import RecipeCard from '../../components/RecipeCard/RecipeCard'
 
@@ -42,7 +33,6 @@ const RecipeList = (props) => {
           </button>
         </div>
       </form>
-    <Link>
     <div className={styles.recipeCard}>
 
         {props.recipeResults.map((result) => 
@@ -54,7 +44,6 @@ const RecipeList = (props) => {
         )}
 
       </div>
-    </Link>
     </main>
   )
 }
