@@ -5,6 +5,7 @@
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
+  margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
   background-color: white;
@@ -12,12 +13,75 @@
   width: 100%;
 }
 
+.reviewCard {
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid grey;
+  color:black;
+  width: 90%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .comment {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  height: 50px;
   font-size: 16px;
+  height: 100px;
+  width: 70%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
+.author {
+  border-left: 1px solid;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  width: 30%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.posted {
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .author {
+    font-size: 10px;
+  }
+  .rating > p {
+    font-size: 12px;
+  }
+  .rating > img{
+    width: 10px;
+    height:10px;
+  }
+  .posted {
+    font-size: 10px;
+  }
+}
+
+/* .rating > p {
+  font-size: 14px;
+} */
 
 .rating > img{
   width: 25px;
@@ -25,55 +89,37 @@
   background-color: white;
 }
 
-.reviewCard {
-  display: flex;
-  border-radius: 10px;
-  border: 1px solid grey;
-  color:black;
-  width: 300px;
-  height: 100px;
-  padding: 15px;
-  display: flex;
-  justify-content: space-around;
-  padding-right: 0px;
-}
-
-.author {
-  border-left: 1px solid;
-  font-size: 10px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 0 0 10px;
-}
-
 .photo {
   display: flex;
   flex-direction: column;
-  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
   color: grey;
+  font-weight: bold;
+  padding: 10px 0;
 }
 
 .photo > img {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-  margin-left: 20px;
-  
+  border-radius: 50%
 }
 
 .button {
   display: flex;
   flex-direction: column;
-}
-
-.comment > h4 {
-  margin: 5px;
+  justify-content: space-evenly;
+  height: 80px;
 }
 
   .button > button {
-  background-color: transparent;
+  background-color: white;
   border: none;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
+}
+
+.button > button:hover {
+  cursor: pointer;
 }

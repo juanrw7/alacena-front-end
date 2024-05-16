@@ -37,7 +37,6 @@ async function create (recipeData, reviewData) {
 }
 
 async function recipeDetails (recipeData) {
-  console.log(recipeData)
   try {
     const res = await fetch(`${BASE_URL}/recipedetails`, {
       method: "POST",
