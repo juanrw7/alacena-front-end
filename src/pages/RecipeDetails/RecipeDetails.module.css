@@ -178,4 +178,17 @@
   height: 300px;
 }
 
-
+.backButton {
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 5px 50px;
+  cursor: pointer;
+  width: 75%;
+  max-width: 1200px;
+  height: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 5px 5px ;
+}
