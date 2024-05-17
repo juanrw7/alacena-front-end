@@ -4,9 +4,7 @@ import ReviewCard from '../ReviewCard/ReviewCard'
 //css
 import styles from './Reviews.module.css'
 
-
 const Reviews = (props) => {
-  console.log(props)
   
   if (!props.recipe.reviews) return <h1>No reviews yet...</h1>
 

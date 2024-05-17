@@ -1,5 +1,5 @@
 // npm modules
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -61,7 +61,6 @@ function App() {
     evt.preventDefault()
     try {
       const results = await recipeService.index(formData)
-      console.log(results)
       setRecipeResults(results)
     } catch (err) {
       console.log(err)
@@ -77,7 +76,6 @@ function App() {
     console.log(err)
   }
     }
-    console.log(searchFormData)
   
   const handleInputChange = (evt) => {
     const {name, value} = evt.target

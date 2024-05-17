@@ -5,10 +5,6 @@ import SearchForm from '../../components/SearchForm/SearchForm'
 //css
 import styles from './RecipeSearch.module.css'
 
-
-
-
-
 const RecipeSearch = (props) => {
   console.log(props.searchFormData)
   return ( 
@@ -16,7 +12,7 @@ const RecipeSearch = (props) => {
       <div className={styles.container}>
         <div className={styles.title}>
           <h1>Recipe Search</h1>
-          <p>Please enter a minmum of 3 ingredients</p>
+          <p>Please enter a minmum of 1 ingredient</p>
         </div>
         <div className={styles.search}>
           <SearchForm

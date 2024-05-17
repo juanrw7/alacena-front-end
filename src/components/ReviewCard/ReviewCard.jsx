@@ -23,16 +23,15 @@ const ReviewCard = (props) => {
         <span>Rating:</span>{props.review.rating > 1? <p> {props.review.rating}  Stars</p> : <p> {props.review.rating} Star</p> }
         <img id="star" src={starIcon} alt="star rating" />
         </div>
-        <div className={styles.photo}>
-          <img src={props.review.author.photo} alt="" />
-          {props.review.author.name}
-          <br />
-          <span className={styles.posted}>
-          Posted: &nbsp;
-          {(new Date(props.review.author.createdAt).toLocaleString('en-US', {month: 'numeric', day: 'numeric', year: '2-digit'}))}
-          </span>
-        </div>
-          
+          <div className={styles.photo}>
+            <img src={props.review.author.photo} alt="" />
+            {props.review.author.name}
+            <br />
+            <span className={styles.posted}>
+            Posted: &nbsp;
+            {(new Date(props.review.author.createdAt).toLocaleString('en-US', {month: 'numeric', day: 'numeric', year: '2-digit'}))}
+            </span>
+          </div>
         </div>
         </div> 
         <div className={styles.button}>
@@ -44,10 +43,8 @@ const ReviewCard = (props) => {
             state={recipeInfo}
             >
               <img src={editIcon} alt="edit Icon" />
-              
             </NavLink>
             </button>
-            
               <button  onClick={() => props.handleDeleteReview(props.recipeId, props.review._id)}>
                 <img src={trashIcon} alt="trash Icon"/>
               </button>
