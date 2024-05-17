@@ -79,10 +79,6 @@
   }
 }
 
-/* .rating > p {
-  font-size: 14px;
-} */
-
 .rating > img{
   width: 25px;
   height:25px;
@@ -113,7 +109,7 @@
   height: 80px;
 }
 
-  .button > button {
+.button > button {
   background-color: white;
   border: none;
   width: 35px;

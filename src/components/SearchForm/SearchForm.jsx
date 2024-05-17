@@ -1,8 +1,8 @@
-
+//css
 import styles from './SearchForm.module.css'
 
 const SearchForm = (props) => {
-console.log(props.searchFormData)
+
   return ( 
     <>
     <div className={styles.container}>
@@ -13,14 +13,12 @@ console.log(props.searchFormData)
         required
           type="text" 
           name="ingredient1"
-        
           onChange={props.handleInputChange} 
         />
         </label>
         <label className={styles.label}>
           Ingredient: &nbsp;
         <input 
-      
           type="text" 
           name="ingredient2" 
           onChange={props.handleInputChange}
@@ -29,7 +27,6 @@ console.log(props.searchFormData)
         <label className={styles.label}>
           Ingredient: &nbsp;
         <input 
-        
           type="text" 
           name="ingredient3" 
           onChange={props.handleInputChange}
@@ -91,7 +88,9 @@ console.log(props.searchFormData)
           onChange={props.handleInputChange} 
         />
         </label>
-        <button className={styles.button} type="submit">Search</button>
+        <button className={styles.button} type="submit">
+          Search
+        </button>
       </form>
     </div>
     </>

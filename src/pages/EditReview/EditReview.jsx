@@ -2,7 +2,6 @@
 import { useLocation, useParams, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
-
 //css
 import styles from './EditReview.module.css'
 
@@ -14,16 +13,8 @@ const EditReview = () => {
   const { state } = useLocation()
   const { recipeId } = useParams()
   const [formData, setFormData] = useState(state[1])
-
-  console.log(recipeId)
-  const recipe = {recipe:state[0]}
-
   const [currentRecipe, setCurrentRecipe] = useState(recipe)
-
-  
-  // setCurrentRecipe(recipe)
-
-
+  const recipe = {recipe:state[0]}
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -49,19 +40,18 @@ const EditReview = () => {
             onChange={handleChange}
           />
         </div>
-
         <div className={styles.formSection}>
-        <label className={styles.label}>
-          Rating (1-5)
-        </label>
-        <input
-          type="Number"
-          value={formData.rating}
-          name="rating"
-          min="0"
-          max="5"
-          onChange={handleChange}
-        />
+          <label className={styles.label}>
+            Rating (1-5)
+          </label>
+          <input
+            type="Number"
+            value={formData.rating}
+            name="rating"
+            min="0"
+            max="5"
+            onChange={handleChange}
+          />
         </div>
         <div className={styles.bottomContainer}>
           <button type='submit'

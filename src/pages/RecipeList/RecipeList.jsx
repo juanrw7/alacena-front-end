@@ -34,15 +34,12 @@ const RecipeList = (props) => {
         </div>
       </form>
     <div className={styles.recipeCard}>
-
         {props.recipeResults.map((result) => 
-
           <RecipeCard
           key={result.recipe.uri}
           result={result}
           />
         )}
-
       </div>
     </main>
   )

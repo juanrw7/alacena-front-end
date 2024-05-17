@@ -16,21 +16,16 @@ import styles from "./RecipeDetails.module.css"
 
 const RecipeDetails= (props) => {
   const {state} = useLocation()
-  
-
   const [recipeData, setRecipeData] = useState(state.recipe)
   const [reviewData, setReviewData] = useState({
     comment: '',
     rating: ''
   })
-  
+
   const handleSubmit = async evt => {
-    console.log(evt)
-    console.log(recipeData)
     evt.preventDefault()
     try {
       const newRecipe = await recipeService.create(recipeData, reviewData)
-      console.log(newRecipe)
       setRecipeData(newRecipe)
       setReviewData({
         comment: '',
@@ -45,11 +40,9 @@ const RecipeDetails= (props) => {
     setReviewData({...reviewData, [evt.target.name]: evt.target.value })
   }
 
-
   useEffect(() =>{
     const fetchRecipeData = async () => {
       const recipeDetails = await recipeService.recipeDetails(state.recipe)
-      console.log(recipeDetails)
     if (recipeDetails) setRecipeData(recipeDetails)
     }
     fetchRecipeData()
@@ -67,17 +60,12 @@ const RecipeDetails= (props) => {
   return (
     <>
     <main className={styles.main}>
-
     <div className={styles.container}>
-      
-        <h1>{state.recipe.label}</h1>
-
+      <h1>{state.recipe.label}</h1>
       <div className={styles.recipeHeader}>
-
         <div className={styles.image}>
           <img src={state.recipe.image} alt="recipe Image" />
         </div>
-
         <div className={styles.recipeInfo}>
           {state.recipe.totalTime>0 && <h2>- Cooking time: {state.recipe.totalTime}min</h2>}
           <h2>- Serves: {state.recipe.yield}</h2>
@@ -86,25 +74,20 @@ const RecipeDetails= (props) => {
           <h2>- Calories per serving: {Math.round(state.recipe.calories / state.recipe.yield)}</h2>
         </div>
       </div>
-
-
       <div className={styles.instructions}>
         <a href={state.recipe.url} target="_blank">View Recipe Instructions</a>
       </div>
       <div className={styles.title}>
         Ingredients
       </div>
-
       <div className={styles.ingredients}>
         {state.recipe.ingredients.map(ingredient =>
         <div 
         key={ingredient.foodId}
         className={styles.ingredient}
         >
-
           <h3>{ingredient.food.charAt(0).toUpperCase()+ ingredient.food.slice(1)}</h3> 
           <p>{ingredient.text}</p>
-          
         </div>
         )}
       </div>
@@ -125,7 +108,6 @@ const RecipeDetails= (props) => {
             reviewData={reviewData}
             />
         </div>
-        
           <Link to='/recipes'>
         <button className={styles.backButton}>
             Back

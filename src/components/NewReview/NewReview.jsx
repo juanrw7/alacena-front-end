@@ -4,9 +4,9 @@ import styles from './NewReview.module.css'
 const NewReview = (props) => {
   return ( 
     <>
-    
-    <form autoComplete="off" className={styles.form} onSubmit={props.handleSubmit}>
-    <h1>New Review</h1>
+      
+      <form autoComplete="off" className={styles.form} onSubmit={props.handleSubmit}>
+        <h1>New Review</h1>
           <textarea
             required
             value={props.reviewData.comment}
