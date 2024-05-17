@@ -36,6 +36,8 @@ function App() {
     mealType: 'dinner'
   })
 
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
 
   const [recipeResults, setRecipeResults] = useState([])
 
@@ -71,11 +73,14 @@ function App() {
   const handleSearchSubmit = async evt => {
     evt.preventDefault()
     try {
+      setIsSubmitted(true)
       const searchResults = await recipeService.search(searchFormData)
       setRecipeSearchResults(searchResults)
       navigate("/ingredientSearch/allResults")
+      setIsSubmitted(false)
   } catch (err) {
     console.log(err)
+    setIsSubmitted(false)
   }
     }
   
@@ -144,6 +149,8 @@ function App() {
             handleInputChange={handleInputChange}
             handleSearchSubmit={handleSearchSubmit}
             searchFormData={searchFormData}
+            isSubmitted={isSubmitted}
+
             />
           </ProtectedRoute>
         } />

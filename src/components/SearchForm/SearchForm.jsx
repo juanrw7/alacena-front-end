@@ -6,10 +6,6 @@ const SearchForm = (props) => {
   return ( 
     <div className={styles.container}>
       <form onSubmit={props.handleSearchSubmit} className={styles.form} autoComplete="off">
-
-        <div c>
-
-        </div>
         <label className={styles.label}>
           Ingredient: &nbsp;
         <input 
@@ -102,7 +98,7 @@ const SearchForm = (props) => {
         />
         </label>
         <button className={styles.button} type="submit">
-          Search
+          {!props.isSubmitted ? 'Search' : 'Getting your recipes...'}
         </button>
       </form>
     </div>
