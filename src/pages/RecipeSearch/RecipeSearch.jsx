@@ -6,7 +6,6 @@ import SearchForm from '../../components/SearchForm/SearchForm'
 import styles from './RecipeSearch.module.css'
 
 const RecipeSearch = (props) => {
-  console.log(props.searchFormData)
   return ( 
     <>
       <div className={styles.container}>
