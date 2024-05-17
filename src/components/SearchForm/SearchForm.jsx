@@ -13,6 +13,7 @@ const SearchForm = (props) => {
         required
           type="text" 
           name="ingredient1"
+          placeholder='required...'
           onChange={props.handleInputChange} 
         />
         </label>
@@ -21,6 +22,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient2" 
+          placeholder='optional...'
           onChange={props.handleInputChange}
         />
         </label>
@@ -29,6 +31,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient3" 
+          placeholder='optional...'
           onChange={props.handleInputChange}
         />
         </label>
@@ -37,6 +40,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient4" 
+          placeholder='optional...'
           onChange={props.handleInputChange}
         />
         </label>
@@ -45,6 +49,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient5" 
+          placeholder='optional...'
           onChange={props.handleInputChange}
         />
         </label>
@@ -53,6 +58,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient6" 
+          placeholder='optional...'
           onChange={props.handleInputChange}
         />
         </label>
@@ -60,7 +66,8 @@ const SearchForm = (props) => {
           Ingredient: &nbsp;
         <input 
           type="text" 
-          name="ingredient7" 
+          name="ingredient7"
+          placeholder='optional...' 
           onChange={props.handleInputChange}
         />
         </label>
@@ -69,6 +76,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient8" 
+          placeholder='optional...'
           onChange={props.handleInputChange}
         />
         </label>
@@ -77,6 +85,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient9" 
+          placeholder='optional...'
           onChange={props.handleInputChange}
         />
         </label>
@@ -85,6 +94,7 @@ const SearchForm = (props) => {
         <input 
           type="text" 
           name="ingredient10"
+          placeholder='optional...'
           onChange={props.handleInputChange} 
         />
         </label>
