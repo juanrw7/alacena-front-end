@@ -108,11 +108,11 @@ const RecipeDetails= (props) => {
             reviewData={reviewData}
             />
         </div>
-          <Link to='/recipes'>
-        <button className={styles.backButton}>
-            Back
-        </button>
-          </Link> 
+        <Link to='/search'>
+          <button className={styles.backButton}>
+              Back
+          </button>
+        </Link> 
     </main>
   </>
   )
