@@ -20,7 +20,7 @@ console.log(props.searchFormData)
         <label className={styles.label}>
           Ingredient: &nbsp;
         <input 
-        required
+      
           type="text" 
           name="ingredient2" 
           onChange={props.handleInputChange}
@@ -29,7 +29,7 @@ console.log(props.searchFormData)
         <label className={styles.label}>
           Ingredient: &nbsp;
         <input 
-        required
+        
           type="text" 
           name="ingredient3" 
           onChange={props.handleInputChange}

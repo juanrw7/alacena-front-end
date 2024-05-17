@@ -39,6 +39,7 @@ function App() {
   const [recipeResults, setRecipeResults] = useState([])
 
   const [searchFormData, setSearchFormData] = useState(initialFormValues)
+  const [recipeSearchResults, setRecipeSearchResults] = useState([])
 
   const navigate = useNavigate()
   
@@ -71,7 +72,7 @@ function App() {
     evt.preventDefault()
     try {
       const searchResults = await recipeService.search(searchFormData)
-      setSearchFormData(searchResults)
+      setRecipeSearchResults(searchResults)
   } catch (err) {
     console.log(err)
   }
