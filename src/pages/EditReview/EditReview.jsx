@@ -13,8 +13,8 @@ const EditReview = () => {
   const { state } = useLocation()
   const { recipeId } = useParams()
   const [formData, setFormData] = useState(state[1])
-  const [currentRecipe, setCurrentRecipe] = useState(recipe)
   const recipe = {recipe:state[0]}
+  const [currentRecipe, setCurrentRecipe] = useState(recipe)
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
