@@ -4,9 +4,12 @@ import styles from './SearchForm.module.css'
 const SearchForm = (props) => {
 
   return ( 
-    <>
     <div className={styles.container}>
       <form onSubmit={props.handleSearchSubmit} className={styles.form} autoComplete="off">
+
+        <div c>
+
+        </div>
         <label className={styles.label}>
           Ingredient: &nbsp;
         <input 
@@ -103,7 +106,6 @@ const SearchForm = (props) => {
         </button>
       </form>
     </div>
-    </>
   )
 }
 
