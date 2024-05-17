@@ -126,11 +126,11 @@ const RecipeDetails= (props) => {
             />
         </div>
         
-        <Link to='/recipes'>
-        <button className={styles.button}>
-          Back
-          </button>
-      </Link> 
+          <Link to='/recipes'>
+        <button className={styles.backButton}>
+            Back
+        </button>
+          </Link> 
     </main>
   </>
   )

@@ -19,7 +19,9 @@ const NavBar = ({ user, handleLogout }) => {
   const protectedLinks = (
     <ul>
       <li><NavLink to='/recipes'>Get Recipes</NavLink></li>
-      <li><NavLink to="/profiles">Profiles</NavLink></li>
+      {/* This Navlink will later be used to show the recipes that each user has saved*/}
+      {/* <li><NavLink to="/profiles">Profiles</NavLink></li> */}
+      {/* This */}
       <li>
         <NavLink to="" onClick={handleLogout}>LOG OUT</NavLink>
       </li>
