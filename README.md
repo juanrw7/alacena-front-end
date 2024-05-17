@@ -1,9 +1,14 @@
-# Alacena - A recipe app
-## [Click here to find your next meal on the Alacena App]()
+# Alacena - Your go to Recipe App
+## [Click here to find your next meal on the Alacena App](https://alacena-jb.netlify.app/)
 
 ![alt text](https://i.imgur.com/77gRtts.jpeg "Alacena Landing Page")
+![alt text](https://i.imgur.com/btbYmjC.jpeg "Alacena Daily Recipe Page")
+![alt text](https://i.imgur.com/zZqWhfd.jpeg "Alacena Recipe Details Page")
+![alt text](https://i.imgur.com/uOh4dyC.jpeg "Alacena Ingredient Search Page")
 
 Alacena was created because we have a passion for cooking and great food.  Alacena is a tool to help you make a decision of the daily question 'what are we eating?' by offering 20 recipes per day for the user to try.
+
+[GitHub Repo for Alacena Back-End-Server Code](https://github.com/juanrw7/alacena-back-end ) 
 
 ## Contributors
 - Juan Ramirez - [GitHub](https://github.com/juanrw7)
