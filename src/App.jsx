@@ -3,15 +3,16 @@ import { useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
+// import Profiles from './pages/Profiles/Profiles'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
 import RecipeDetails from './pages/RecipeDetails/RecipeDetails'
 import EditReview from './pages/EditReview/EditReview'
 import RecipeSearch from './pages/RecipeSearch/RecipeSearch'
+import IngredientSearchList from './pages/IngredientSearchList/IngredientSearchList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -72,6 +73,7 @@ function App() {
     try {
       const searchResults = await recipeService.search(searchFormData)
       setRecipeSearchResults(searchResults)
+      navigate("/ingredientSearch/allResults")
   } catch (err) {
     console.log(err)
   }
@@ -87,14 +89,16 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route
+        {/* This Route will later be used to show the recipes that each user has saved */}
+        {/* <Route
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
               <Profiles />
             </ProtectedRoute>
           }
-        />
+        /> */}
+        {/* This */}
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
@@ -134,12 +138,19 @@ function App() {
           </ProtectedRoute>
           }
         />
-        <Route path='/search' element={
+        <Route path='/ingredientSearch' element={
           <ProtectedRoute user={user}>
             <RecipeSearch user={user}
             handleInputChange={handleInputChange}
             handleSearchSubmit={handleSearchSubmit}
             searchFormData={searchFormData}
+            />
+          </ProtectedRoute>
+        } />
+        <Route path='/ingredientSearch/allResults' element={
+          <ProtectedRoute user={user}>
+            <IngredientSearchList user={user}
+            recipeSearchResults={recipeSearchResults}
             />
           </ProtectedRoute>
         } />
