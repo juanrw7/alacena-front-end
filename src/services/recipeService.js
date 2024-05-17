@@ -82,10 +82,27 @@ try {
 }
 }
 
+async function search(searchFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/search`, {
+      method: "POST",
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`, 
+        'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(searchFormData)
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
 export {
   index,
   create,
   recipeDetails,
   updateReview,
   deleteReview,
+  search,
 }
